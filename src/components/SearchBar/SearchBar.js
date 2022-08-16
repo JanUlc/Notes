@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useNotes } from "../../hooks/useNotes";
 import { createTitle } from "../../utils/createTitle";
+import { getReadableContent } from "../../utils/getReadableContent";
 import {
   SearchBarContainer,
   SearchedResult,
   SearchedResultItem,
   StyledInput,
-} from "../Styles/StyledSearchBar";
+} from "./SearchBar.styles";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -15,7 +16,9 @@ const SearchBar = () => {
   const searchedNotes =
     query.length === 0
       ? []
-      : notes.filter((note) => note.content.includes(query));
+      : notes.filter((note) =>
+          getReadableContent(note.content).includes(query)
+        );
 
   const selectNote = (noteId, folderId) => {
     setActiveFolderId(folderId);

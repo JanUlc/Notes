@@ -1,5 +1,6 @@
 import React, { createElement, useState } from "react";
 import { useContext } from "react";
+import { EditorState } from "draft-js";
 
 export const NotesContext = React.createContext({
   notes: [],
@@ -12,25 +13,25 @@ const initialNotes = [
   {
     id: 1,
     folderId: 1,
-    content: "qwerty",
+    content: EditorState.createEmpty(),
     lastModified: 1655565860185,
   },
   {
     id: 2,
     folderId: 1,
-    content: "asdfg",
+    content: EditorState.createEmpty(),
     lastModified: 1655565860186,
   },
   {
     id: 3,
     folderId: 2,
-    content: "zxcv",
+    content: EditorState.createEmpty(),
     lastModified: 1655565860187,
   },
   {
     id: 4,
     folderId: 2,
-    content: "qazwsx",
+    content: EditorState.createEmpty(),
     lastModified: 1655565860188,
   },
 ];
@@ -99,7 +100,7 @@ const NotesProvider = ({ children }) => {
     const newNote = {
       id: sortedNotes[sortedNotes.length - 1].id + 1,
       folderId: folderId,
-      content: "",
+      content: EditorState.createEmpty(),
       lastModified: Date.now(),
     };
 

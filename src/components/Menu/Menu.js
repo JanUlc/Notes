@@ -4,7 +4,7 @@ import AddNoteButton from "../AddNoteButton/AddNoteButton";
 import DeleteFolderButton from "../DeleteFolderButton.js/DeleteFolderButton";
 import DeleteNoteButton from "../DeleteNoteButton/DeleteNoteButton";
 import SearchBar from "../SearchBar/SearchBar";
-import { MenuContainer, ButtonsWrapper } from "../Styles/StyledMenu";
+import { MenuContainer, ButtonsWrapper } from "./Menu.styles";
 
 const Menu = () => {
   return (
