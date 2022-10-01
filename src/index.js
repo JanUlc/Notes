@@ -8,11 +8,9 @@ import NotesProvider from "./hooks/useNotes";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <NotesProvider>
-      <App />
-    </NotesProvider>
-  </React.StrictMode>
+  <NotesProvider>
+    <App />
+  </NotesProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
